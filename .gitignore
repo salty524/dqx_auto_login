@@ -1,0 +1,10 @@
+build/
+dist/
+.exe
+*.json
+*.log
+*.xml
+*.cfg
+*.ini
+cxjYxsgheGzie!iyx
+__pycache__/
