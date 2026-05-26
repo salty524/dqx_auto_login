@@ -13,31 +13,12 @@
 * 非公式ツールのため、利用によるアカウントへの影響（BANリスク等）は自己責任で使用してください
 * `config.json` にはログイン情報が保存されるため他の人に渡さないでください
 
-## セットアップ
+## 使用方法
 
-### 1. リポジトリのクローンとフォルダへの移動
-```bash
-git clone https://github.com/salty524/dqx_auto_login
-cd dqx_auto_login
-```
-
-### 2. 依存ライブラリのインストール
-```bash
-pip install -r requirements.txt
-```
-
-### 3. 実行
-```bash
-python launcher.py
-```
-
-### 4. exe化する場合
-```bash
-pyinstaller --onefile --icon=icon.ico launcher.py
-```
-`dist/launcher.exe` が生成されます。
-
+ダウンロードした `launcher.exe` を任意のフォルダに保存し実行してください。<br>
 **初回起動時**は画面の指示に従いID・パスワード等を入力してください。設定は `config.json` に保存され、次回以降は自動でログイン・起動します。
+
+※不安な場合は自身で `launcher.py` を実行したりしてください。
 
 ## OTPシークレットキーの取得について
 * Proton AuthenticatorやAegisの場合、登録しているSQEX用の認証設定から「秘密鍵」や「Secret」に記載されている32文字のキーを確認してください。
