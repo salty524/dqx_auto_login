@@ -4,4 +4,3 @@ pwinput
 pywin32
 psutil
 beautifulsoup4
-pyinstaller
