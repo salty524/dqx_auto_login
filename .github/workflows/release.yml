@@ -1,16 +1,12 @@
 name: Build and Release Exe
-
 on:
   release:
     types: [published]
-
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -25,11 +21,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests pyotp pwinput pywin32 psutil beautifulsoup4
 
-    - name: Clone and Rebuild PyInstaller Bootloader
+    - name: Set up MinGW
+      uses: msys2/setup-msys2@v2
+      with:
+        install: mingw-w64-x86_64-gcc
+
+    - name: Clone and Rebuild PyInstaller Bootloader with MinGW (gcc)
       run: |
+        $env:PATH = "C:\msys64\mingw64\bin;" + $env:PATH
         git clone https://github.com/pyinstaller/pyinstaller.git
         cd pyinstaller/bootloader
-        python ./waf distclean all
+        python ./waf distclean all --gcc
         cd ..
         pip install -e .
 
