@@ -27,7 +27,7 @@
 ## 設定項目 (config.json)
 | キー | 内容 |
 | :--- | :--- |
-| `user_id` | スクウェア・エニックス ID |
+| `user_id` | SQEX ID |
 | `password` | パスワード |
 | `otp_auto` | OTP自動入力の有効/無効 |
 | `otp_secret` | OTPシークレットキー（自動入力が有効な場合のみ保存） |
