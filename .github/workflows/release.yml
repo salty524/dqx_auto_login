@@ -27,11 +27,12 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile --icon=icon.ico launcher.py
+        pyinstaller --onedir --icon=icon.ico launcher.py
+        Compress-Archive -Path dist/launcher -DestinationPath dist/launcher.zip
 
     - name: Upload Exe to GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        files: dist/launcher.exe
+        files: dist/launcher.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
