@@ -15,10 +15,10 @@
 
 ## 使用方法
 
-ダウンロードした `launcher.exe` を任意のフォルダに保存し実行してください。<br>
+ダウンロードした `launcher.zip` を解凍し、 `launcher.exe` を実行してください。<br>
 **初回起動時**は画面の指示に従いID・パスワード等を入力してください。設定は `config.json` に保存され、次回以降は自動でログイン・起動します。
 
-※Windows Defenderにウィルスとして誤検知されます。不安な場合は自身で `launcher.py` を実行したり、exe化してください。
+※Windows Defenderにウィルスとして誤検知される可能性があります。不安な場合は自身で `launcher.py` を実行したり、exe化してください。
 
 ## OTPシークレットキーの取得について
 * Proton AuthenticatorやAegisの場合、登録しているSQEX用の認証設定から「秘密鍵」や「Secret」に記載されている32文字のキーを確認してください。
