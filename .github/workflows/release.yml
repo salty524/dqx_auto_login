@@ -21,13 +21,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests pyotp pwinput pywin32 psutil beautifulsoup4
 
-    - name: Install PyInstaller (rebuild bootloader)
+    - name: Install PyInstaller (yt-dlp build)
       run: |
-        git clone https://github.com/pyinstaller/pyinstaller.git
-        cd pyinstaller/bootloader
-        python ./waf distclean all
-        cd ..
-        pip install -e .
+        pip install https://github.com/yt-dlp/Pyinstaller-Builds/releases/download/2026.05.02.225304/pyinstaller-6.20.0-py3-none-win_amd64.whl
 
     - name: Build with PyInstaller
       run: |
