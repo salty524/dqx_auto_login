@@ -10,22 +10,29 @@
   ※プレイヤー登録していない場合はゲストモードで起動します
 
 ## 注意事項
-非公式ツールのため、利用によるアカウントへの影響（BANリスク等）は自己責任でお願いします。
+* 非公式ツールのため、利用によるアカウントへの影響（BANリスク等）は自己責任で使用してください
+* config.jsonファイルにはログイン情報が保存されるため他の人に渡さないでください
 
 ## セットアップ
 
-**依存ライブラリのインストール**
+### 1. リポジトリのクローンとフォルダへの移動
+```bash
+git clone [https://github.com/salty524/dqx_auto_login](https://github.com/salty524/dqx_auto_login)
+cd dqx_auto_login
 ```
+
+### 2. 依存ライブラリのインストール
+```bash
 pip install -r requirements.txt
 ```
 
-**実行**
-```
+### 3. 実行
+```bash
 python launcher.py
 ```
 
-**exe化する場合**
-```
+### 4. exe化する場合
+```bash
 pyinstaller --onefile --icon=icon.ico launcher.py
 ```
 `dist/launcher.exe` が生成されます。
@@ -50,7 +57,6 @@ pyinstaller --onefile --icon=icon.ico launcher.py
 | `check_update` | 起動時のアップデート確認（true/false） |
 
 ## 機能概要
-
 ログインサーバーに対してID・パスワード・OTPを送信し、取得したSessionIDを使ってゲームを直接起動します。初回ログイン後はSSOトークンを保存して次回以降の認証を高速化します。OTPはTOTP（RFC 6238）準拠で、シークレットキーはローカルにのみ保存され通信には使用されません。
 
 ゲームのインストールパスはレジストリから自動検出します。また、ゲーム本体が保持する難読化済みのプレイヤーリストファイルを復号して読み取り、ゲーム起動時に適切なプレイヤー番号を引数として渡します。
